@@ -10,7 +10,7 @@ FROM node:latest
 RUN apt-get update && apt-get install -y git
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /HeadlessHub/Dockerfile
 
 # Copy package.json and package-lock.json
 COPY package.json .
@@ -24,3 +24,6 @@ COPY . .
 
 # Specify the command to run your application
 # CMD ["node", "app.js"]
+EXPOSE 8055
+
+CMD ["npm", "start"]
